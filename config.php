@@ -22,6 +22,22 @@ function addDepartment($deptName)
   checkQuery($exe, 'Inserted');
 }
 
+function addPaper($subCode, $paperId, $maxm, $sem, $year)
+{
+  global $conn;
+  $qry = "INSERT into paper values('','$subCode','$paperId','$maxm','$sem','$year')";
+  $exe = mysqli_query($conn, $qry);
+  checkQuery($exe, 'Inserted');
+}
+
+function addQuestions($paperId, $question, $part, $marks)
+{
+  global $conn;
+  $qry = "INSERT into paper values('','$paperId', '$question', '$part', '$marks')";
+  $exe = mysqli_query($conn, $qry);
+  checkQuery($exe, 'Inserted');
+}
+
 function login($username, $passwd)
 {
   global $conn;

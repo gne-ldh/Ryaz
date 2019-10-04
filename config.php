@@ -22,6 +22,14 @@ function addUser($uname, $pass)
   checkQuery($exe, 'Inserted');
 }
 
+function addSubject($sname, $subcode, $sem, $dept)
+{
+  global $conn;
+  $qry = "INSERT into user values('','$sname','$subcode','$sem','$dept)";
+  $exe = mysqli_query($conn, $qry);
+  checkQuery($exe, 'Inserted');
+}
+
 function addDepartment($deptName)
 {
   global $conn;

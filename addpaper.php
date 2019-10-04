@@ -119,3 +119,9 @@
 </body>
 
 </html>
+<?php
+if(isset($_POST['btn_login'])){
+  $sql = 'SELECT * FROM user WHERE uname = "'.$_POST["username"].'" and password ="'.$_POST["password"].'"';
+  $result = mysqli_query($conn,$sql);
+}
+?>

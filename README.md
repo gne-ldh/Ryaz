@@ -1,16 +1,16 @@
-# --------------------------`Hackathon 2k19`--------------------------
+# -----------------------`Hackathon 2k19`-----------------------
 
-## --------``Team RYAZ on Online Examination System``--------
+## -------------``Team RYAZ on Online Examination System``-------------
 
 ### Team Members
 ----------------
 1. Nandini Prashar – Team Leader
 2. Rajvir Singh
-3. Kamaldeep Kaur
+3. Kamalpreet Kaur
 4. Divyanshu Garg
 5. Dashmeet Singh - Mentor
 ---------------------------------------------------------------------------------
-## ------------------------------------INDEX-------------------------------------
+## --------------------------------------INDEX---------------------------------------
 1.	***Introduction***
 1.1.	Purpose
 1.2.	Document Conventions

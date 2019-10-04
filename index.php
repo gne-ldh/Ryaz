@@ -44,9 +44,17 @@
       <form method="POST">
 
         <div>
-          <div class='input-field col s12'>
-            <input class='validate' type="text" name='sub_code' id='sub_code' required style="padding:" />
-            <label for='submit'>Subject Code</label>
+          <div class="input-field col s12">
+            <select name='sub_code' id='sub_code' required>
+              <option value="" disabled selected>Choose your Semester</option>
+              <option value="1">1st</option>
+              <option value="2">2nd</option>
+              <option value="3">3rd</option>
+              <option value="4">4th</option>
+              <option value="5">5th</option>
+              <option value="6">6th</option>
+            </select>
+            <label for='sem'>Semester</label>
           </div>
         </div>
 
@@ -64,18 +72,20 @@
           </div>
         </div>
 
-        <!-- <div>
+        <div>
           <div class="input-field col s12">
             <select name='sem' id='sem' required>
-              <option value="" disabled selected>Choose your option</option>
-              <option value="1">Option 1</option>
-              <option value="2">Option 2</option>
-              <option value="3">Option 3</option>
+              <option value="" disabled selected>Choose your Semester</option>
+              <option value="1">1st</option>
+              <option value="2">2nd</option>
+              <option value="3">3rd</option>
+              <option value="4">4th</option>
+              <option value="5">5th</option>
+              <option value="6">6th</option>
             </select>
             <label for='sem'>Semester</label>
           </div>
         </div>
-        <br /> -->
 
         <div>
           <div class='input-field col s12'>
@@ -118,13 +128,29 @@
         $('#modal-trigger').modal();
       });
     })(jQuery);
+
+
+    document.addEventListener('DOMContentLoaded', function() {
+      var elems = document.querySelectorAll('select');
+      var instances = M.FormSelect.init(elems, options);
+    });
+
+    // Or with jQuery
+
+    $(document).ready(function() {
+      $('select').formSelect();
+    });
   </script>
+
+
+
+  <!-- jQuery CDN -->
+  <script src="js/jquery-3.4.1.min.js"></script>
 
   <!--JavaScript at end of body for optimized loading-->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
 
-  <!-- jQuery CDN -->
-  <script src="js/jquery-3.4.1.min.js"></script>
+
 </body>
 
 </html>

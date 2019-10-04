@@ -53,3 +53,21 @@ function login($username, $passwd)
     echo "<script>console.log('Your Login Name or Password is invalid')</script>";
   }
 }
+
+function getData($table)
+{
+  global $conn;
+  $qry = "SELECT * FROM $table";
+  $exe = mysqli_query($conn, $qry);
+  $array = array(array());
+  $i = 0;
+  while ($cont = mysqli_fetch_array($exe)) {
+    for ($j = 0; $j <= 3; $j++) {
+      $array[$i][$j] = $cont[$j];
+    }
+    $i++;
+  }
+  return $array;
+}
+$dep = getData('departments');
+echo json_encode($dep);

@@ -33,7 +33,7 @@
   <div class="right-side">
     <div class="header-button-div">
       <h3>Dashboard</h3>
-      <button data-target="modal1" class="btn modal-trigger">Modal</button>
+      <button data-target="modal1" class="btn modal-trigger">Add Paper</button>
     </div>
   </div>
 
@@ -42,12 +42,14 @@
     <div class="modal-content">
       <h4>Add paper</h4>
       <form method="POST">
+
         <div>
           <div class='input-field col s12'>
-            <input class='validate' type="text" name='sub_code' id='sub_code' required / style="padding:">
+            <input class='validate' type="text" name='sub_code' id='sub_code' required style="padding:" />
             <label for='submit'>Subject Code</label>
           </div>
         </div>
+
         <div>
           <div class='input-field col s12'>
             <input class='validate' type="text" name='p_id' id='p_id' required />
@@ -62,24 +64,33 @@
           </div>
         </div>
 
-        <div>
-          <div class='input-field col s12'>
-            <input class='validate' type="number" name='sem' id='sem' required />
+        <!-- <div>
+          <div class="input-field col s12">
+            <select name='sem' id='sem' required>
+              <option value="" disabled selected>Choose your option</option>
+              <option value="1">Option 1</option>
+              <option value="2">Option 2</option>
+              <option value="3">Option 3</option>
+            </select>
             <label for='sem'>Semester</label>
           </div>
         </div>
+        <br /> -->
 
         <div>
           <div class='input-field col s12'>
-            <input class='validate' type="number" name='year' id='year' required />
+            <input class='validate' type="number" name='year' id='year' required value="2019" />
             <label for='year'>Year</label>
           </div>
         </div>
+
         <br />
         <div class='row' style="color:white;padding-bottom:10%;">
-          <button style="color:white;font-size: 1rem;" type='submit' name='btn_login' class='col s3 btn btn-small white  waves-effect z-depth-1 y-depth-1 teal lighten-1'>Add</button></div>
+          <button style="color:white;font-size: 1rem;" type='submit' name='btn_login' class='col s3 btn btn-small white  waves-effect z-depth-1 y-depth-1 teal lighten-1'>Add</button>
+        </div>
         <form>
     </div>
+  </div>
   </div>
 
   <!-- right-side -->
@@ -101,18 +112,12 @@
   <script>
     (function($) {
       $(function() {
-
-        //initialize all modals           
         $('.modal').modal();
-
-        //now you can open modal from code
         $('#modal1').modal('open');
-
-        //or by click on trigger
+        $('#modal1').modal('close');
         $('#modal-trigger').modal();
-
-      }); // end of document ready
-    })(jQuery); // end of jQuery name space
+      });
+    })(jQuery);
   </script>
 
   <!--JavaScript at end of body for optimized loading-->
@@ -123,3 +128,8 @@
 </body>
 
 </html>
+<?php
+if (isset($_POST['btn_login'])) {
+  addPaper($_POST['sub_code'], $_POST['p_id'], $_POST['max_marks'], $_POST['sem'], $_POST['year']);
+}
+?>

@@ -1,67 +1,64 @@
 /* Write your CSS Code Here */
 
-
-body{
-   font-family: 'Open Sans', sans-serif;
+body {
+  font-family: "Open Sans", sans-serif;
 }
 
 aside {
-    height: 1080px;
-    background-color: #F0F0F0;
-    width: 20%;
-    position: fixed;
-    /* border: solid 1px; */
+  height: 1080px;
+  background-color: #f0f0f0;
+  width: 20%;
+  position: fixed;
+  /* border: solid 1px; */
 }
 
 .top-div-aside img {
-    border-radius: 50%;
-    width: 35%;
+  border-radius: 50%;
+  width: 35%;
 }
 
-.top-div-aside{
-    padding: 10px;;
-    /* border: solid 1px; */
-    /* height: 150px; */
-    /* text-align: center; */
-    /* font-weight: 400; */
-    padding-left: 10%;
+.top-div-aside {
+  padding: 10px;
+  /* border: solid 1px; */
+  /* height: 150px; */
+  /* text-align: center; */
+  /* font-weight: 400; */
+  padding-left: 10%;
 }
 
 .top-div-aside p {
-    font-size: 18px;
-    margin: 0px 0px 0px 10px;
+  font-size: 18px;
+  margin: 0px 0px 0px 10px;
 }
 
 .right-side {
-    /* border: solid 1px; */
-    margin-left: 20%;
-    /* position: fixed; */
-    padding: 20px 10px 10px 30px;
+  /* border: solid 1px; */
+  margin-left: 20%;
+  /* position: fixed; */
+  padding: 20px 10px 10px 20px;
 }
 
 .grid-container {
-    padding: 10px 20px;
-    border-radius: 10px;
-    background-color: #F0F0F0;
-    display:  grid;
-    grid-template-columns: 50% 50%;
+  padding: 10px 20px;
+  border-radius: 10px;
+  background-color: #f0f0f0;
+  display: grid;
+  grid-template-columns: 50% 50%;
 }
 
 .change-info {
-    margin-top: 70px;
+  margin-top: 70px;
 }
-
-
 
 /* Login Page Styling */
 
 .flexbox-center {
-    display: flex;
-    justify-content: center;
-    background-color: #F0F0F0;
-    margin: 10px 0px;
-    height: 50px;
-    /* line-height: 1% !important; */
+  display: flex;
+  justify-content: center;
+  background-color: #f0f0f0;
+  margin: 10px 0px;
+  height: 50px;
+  /* line-height: 1% !important; */
 }
 
 /* Login Page Styling */

@@ -14,6 +14,14 @@ function checkQuery($exe, $message)
   }
 }
 
+function addUser($uname, $pass)
+{
+  global $conn;
+  $qry = "INSERT into user values('','$uname','$pass','Teacher')";
+  $exe = mysqli_query($conn, $qry);
+  checkQuery($exe, 'Inserted');
+}
+
 function addDepartment($deptName)
 {
   global $conn;
@@ -54,7 +62,7 @@ function login($username, $passwd)
   }
 }
 
-function getData($table)
+function getData($table, $offset)
 {
   global $conn;
   $qry = "SELECT * FROM $table";
@@ -62,12 +70,12 @@ function getData($table)
   $array = array(array());
   $i = 0;
   while ($cont = mysqli_fetch_array($exe)) {
-    for ($j = 0; $j <= 3; $j++) {
+    for ($j = 0; $j <= $offset - 1; $j++) {
       $array[$i][$j] = $cont[$j];
     }
     $i++;
   }
   return $array;
 }
-$dep = getData('departments');
-echo json_encode($dep);
+$departments = getData('departments', 3);
+$subjects = getData('subjects', 5);

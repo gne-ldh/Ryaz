@@ -123,27 +123,3 @@ function setLive($paperId, $start, $end, $date)
   }
   checkQuery($exe, 'Exam Set Live');
 }
-function getPaperStyle($url)
-{
-  global $conn;
-  $qry = "SELECT * FROM onair WHERE url='$url'";
-  $exe = mysqli_query($conn, $qry);
-  $array = array(array());
-  $i = 0;
-  while ($cont = mysqli_fetch_array($exe)) {
-    for ($j = 0; $j <= 5; $j++) {
-      $array[$i][$j] = $cont[$j];
-    }
-    $i++;
-  }
-  $qry = "SELECT * FROM questions WHERE paper_id='$array[0][1]'";
-  $exe = mysqli_query($conn, $qry);
-  $questions = array(array());
-  $i = 0;
-  while ($cont = mysqli_fetch_array($exe)) {
-    for ($j = 0; $j <= 5; $j++) {
-      $questions[$i][$j] = $cont[$j];
-    }
-    $i++;
-  }
-}

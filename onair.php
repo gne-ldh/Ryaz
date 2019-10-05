@@ -4,7 +4,7 @@
 <html>
 
 <head>
-  <title>Create User</title>
+  <title>On Air</title>
   <!--Import Google Icon Font-->
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   <!--Import materialize.css-->
@@ -149,7 +149,6 @@
 </html>
 <?php
 if (isset($_POST['btn_live'])) {
-  echo "llllllllllllllllllllllllllllllllllllllllll";
   setLive($_POST['paperid'], $_POST['start'], $_POST['end'], $_POST['date']);
 }
 ?>

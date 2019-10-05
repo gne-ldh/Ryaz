@@ -62,3 +62,7 @@ aside {
 }
 
 /* Login Page Styling */
+
+.input-radio label {
+  margin-right: 24px;
+}

@@ -49,7 +49,7 @@ function addPaper($subCode, $paperId, $maxm, $sem, $year)
 function addQuestions($paperId, $question, $part, $marks)
 {
   global $conn;
-  $qry = "INSERT into paper values('','$paperId', '$question', '$part', '$marks')";
+  $qry = "INSERT into questions values('','$paperId', '$question', '$part', '$marks')";
   $exe = mysqli_query($conn, $qry);
   checkQuery($exe, 'Inserted');
 }

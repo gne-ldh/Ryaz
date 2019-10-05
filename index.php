@@ -105,25 +105,38 @@
               </div>
             </div>
 
-            <div>
-              <div class='input-field col s12'>
-                <input class='validate' type="text" name='sub_code' id='subcode' required />
-                <label for='sub_code'>Subject Code</label>
-              </div>
-            </div>
 
             <div>
               <div class='input-field col s12'>
-                <input class='validate' type="text" name='semester' id='sem' required />
-                <label for='semester'>Semester</label>
+                <input class='validate' type="text" name='sub_code' id='sub_code' required />
+                <label for='sub_name'>Subject Code</label>
               </div>
             </div>
 
-            <div>
-              <div class='input-field col s12'>
-                <input class='validate' type="text" name='department' id='deptt' required />
-                <label for='department'>Department</label>
-              </div>
+            <div class="input-field col s12">
+              <select name='semester' id='sem' required>
+                <option value="1" selected>1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+                <option value="6">6</option>
+                <option value="7">7</option>
+                <option value="8">8</option>
+              </select>
+              <label for='sem'>Semester</label>
+            </div>
+
+
+            <div class="input-field col s12">
+              <select name='department' id='department' required>
+                <option value="" disabled selected>Select Department</option>
+                <?php
+                foreach ($departments as $department) {
+                  echo "<option value='$department[1]'>$department[2]</option>";
+                } ?>
+              </select>
+              <label for='department'>Department</label>
             </div>
 
             <br />
@@ -141,11 +154,16 @@
           <h4>Add Paper</h4>
           <form method="POST">
 
-            <div>
-              <div class='input-field col s12'>
-                <input class='validate' type="text" name='sub_code' id='subcode' required />
-                <label for='sub_code'>Subject Code</label>
-              </div>
+
+            <div class="input-field col s12">
+              <select name='sub_code' id='sub_code' required>
+                <option value="" disabled selected>Select Subject Code</option>
+                <?php
+                foreach ($subjects as $subject) {
+                  echo "<option value='$subject[2]'>$subject[1]</option>";
+                } ?>
+              </select>
+              <label for='sem'>Subject Code</label>
             </div>
 
             <div>
@@ -162,11 +180,19 @@
               </div>
             </div>
 
-            <div>
-              <div class='input-field col s12'>
-                <input class='validate' type="text" name='sem' id='semester' deptt />
-                <label for='sem'>Semester</label>
-              </div>
+
+            <div class="input-field col s12">
+              <select name='sem' id='sem' required>
+                <option value="1" selected>1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+                <option value="6">6</option>
+                <option value="7">7</option>
+                <option value="8">8</option>
+              </select>
+              <label for='sem'>Semester</label>
             </div>
 
 

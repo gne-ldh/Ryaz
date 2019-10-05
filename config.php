@@ -41,7 +41,7 @@ function addDepartment($deptName)
 function addPaper($subCode, $paperId, $maxm, $sem, $year)
 {
   global $conn;
-  $qry = "INSERT into paper values('','$subCode','$paperId','$maxm','$sem','$year')";
+  $qry = "INSERT into paper values('','$subCode','$paperId','$maxm','$sem','$year','0')";
   $exe = mysqli_query($conn, $qry);
   checkQuery($exe, 'Inserted');
 }
@@ -85,8 +85,22 @@ function getData($table, $offset)
   }
   return $array;
 }
+$papersAll = getData('paper', 7);
 $departments = getData('departments', 3);
 $subjects = getData('subjects', 5);
+
+function getURL($n)
+{
+  $characters = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';
+  $randomString = '';
+
+  for ($i = 0; $i < $n; $i++) {
+    $index = rand(0, strlen($characters) - 1);
+    $randomString .= $characters[$index];
+  }
+
+  return $randomString;
+}
 
 function getSubjectName($code)
 {
@@ -95,5 +109,41 @@ function getSubjectName($code)
     if ($subject[2] == $code) {
       return $subject[1];
     }
+  }
+}
+
+function setLive($paperId, $start, $end, $date)
+{
+  global $conn;
+  $qry = "INSERT into onair values('','$paperId','$start','$end','$date','" . getURL(10) . "')";
+  $exe = mysqli_query($conn, $qry);
+  if ($exe) {
+    $qry = "UPDATE paper SET islive='1' WHERE `paper_id`='$paperId'";
+    $exe = mysqli_query($conn, $qry);
+  }
+  checkQuery($exe, 'Exam Set Live');
+}
+function getPaperStyle($url)
+{
+  global $conn;
+  $qry = "SELECT * FROM onair WHERE url='$url'";
+  $exe = mysqli_query($conn, $qry);
+  $array = array(array());
+  $i = 0;
+  while ($cont = mysqli_fetch_array($exe)) {
+    for ($j = 0; $j <= 5; $j++) {
+      $array[$i][$j] = $cont[$j];
+    }
+    $i++;
+  }
+  $qry = "SELECT * FROM questions WHERE paper_id='$array[0][1]'";
+  $exe = mysqli_query($conn, $qry);
+  $questions = array(array());
+  $i = 0;
+  while ($cont = mysqli_fetch_array($exe)) {
+    for ($j = 0; $j <= 5; $j++) {
+      $questions[$i][$j] = $cont[$j];
+    }
+    $i++;
   }
 }

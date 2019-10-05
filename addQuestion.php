@@ -1,4 +1,5 @@
 <?php include "./config.php"; ?>
+<?php include "./session.php"; ?>
 <!DOCTYPE html>
 <html>
 

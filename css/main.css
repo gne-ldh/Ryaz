@@ -61,6 +61,16 @@ aside {
   /* line-height: 1% !important; */
 }
 
+.flexbox-event {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.flexbox-event button {
+  align-self: center;
+}
+
 /* Login Page Styling */
 
 .input-radio label {

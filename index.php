@@ -194,17 +194,24 @@
       <tr>
         <th>Name</th>
         <th>Department</th>
-        <th>Email</th>
-        <th>Email</th>
+        <th>Paper ID</th>
+        <th>Max. Marks</th>
+        <th>Semester</th>
+        <th>Year</th>
+        <th>Add Questions</th>
       </tr>
       <?php
       $paperData = getdata("paper", "6");
       foreach ($paperData as $paper_data) {
+        $paper_data[1] = getSubjectName($paper_data[1]);
         echo "<tr>
         <td>$paper_data[0]</td>
         <td>$paper_data[1]</td>
         <td>$paper_data[2]</td>
         <td>$paper_data[3]</td>
+        <td>$paper_data[4]</td>
+        <td>$paper_data[5]</td>
+        <td><a href='./addQuestion.php?paperid=$paper_data[2]'>ADD</a></td>
       </tr>";
       }
       ?>

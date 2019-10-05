@@ -87,3 +87,13 @@ function getData($table, $offset)
 }
 $departments = getData('departments', 3);
 $subjects = getData('subjects', 5);
+
+function getSubjectName($code)
+{
+  global $subjects;
+  foreach ($subjects as $subject) {
+    if ($subject[2] == $code) {
+      return $subject[1];
+    }
+  }
+}

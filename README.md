@@ -38,7 +38,8 @@
    4.2. **Other Requirements**<br/>
    4.2.1. Performance Requirements<br/>
    4.2.2. Safety Requirements<br/>
-   4.2.3. Security Requirements
+   4.2.3. Security Requirements<br/>
+5. **_Installation_**
 
 ---
 
@@ -182,3 +183,14 @@ A distributed Online Student Examination database System stores the following in
 ##### 4.2.3. Security Requirements
 
 <p align="justify">Security systems need database storage just like many other applications. However, the special requirements of the security market mean that vendors must choose their database partner carefully.</p>
+
+##### 5. Installation
+
+<p align="justify">
+    <ul>
+        <li>Setup Apache, mysql on your machine.</li>
+        <li>Import hack.sql file into database, Create a database named hack and import in it.</li>
+        <li>Copy the content of this repository to the root directory of the server.</li>
+        <li>Use adminuser:dgarg to login.</li>
+    </ul>
+</p>
